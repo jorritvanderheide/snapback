@@ -1,0 +1,43 @@
+# On a version tag (1.2.3, with a "## 1.2.3" in CHANGELOG.md), on the
+# Forgejo runner on dapple: the checks once more, then a draft Codeberg
+# release with that part of the changelog as its notes. There is nothing to
+# build: a flake pins the tag itself. The source comes as Codeberg's archive
+# of the tag, as the runner has no git.
+name: Release
+
+on:
+  push:
+    tags: ["[0-9]*"]
+
+jobs:
+  release:
+    runs-on: nix
+    timeout-minutes: 60
+    steps:
+      - name: Source
+        run: curl -fsSL "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/archive/$GITHUB_SHA.tar.gz" | tar -xz --strip-components=1
+
+      - name: The changelog has the version
+        run: |
+          if ! grep -qx "## $GITHUB_REF_NAME" CHANGELOG.md; then
+            echo "CHANGELOG.md has no \"## $GITHUB_REF_NAME\""
+            exit 1
+          fi
+
+      - run: nix flake check -L
+
+      - name: Release
+        shell: nix shell --inputs-from . nixpkgs#jq -c bash -eo pipefail {0}
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          api="$GITHUB_SERVER_URL/api/v1/repos/$GITHUB_REPOSITORY"
+          # Before 1.0, and tags like 1.2.0-rc.1, are pre-releases.
+          prerelease=false
+          case "$GITHUB_REF_NAME" in 0.*|*-*) prerelease=true ;; esac
+          # The notes are the version's part of CHANGELOG.md.
+          awk -v v="## $GITHUB_REF_NAME" '$0 == v { on = 1; next } /^## / { on = 0 } on' CHANGELOG.md > notes.md
+          jq -n --arg tag "$GITHUB_REF_NAME" --rawfile body notes.md --argjson pre "$prerelease" \
+              '{tag_name: $tag, name: "snapback \($tag)", body: $body, draft: true, prerelease: $pre}' |
+            curl -fsS -o /dev/null -H "Authorization: token $TOKEN" -H "Content-Type: application/json" \
+              --data-binary @- "$api/releases"
