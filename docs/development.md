@@ -7,7 +7,7 @@ flake.nix        the module and the checks
 module.nix       the options, the units and the restore command
 restore.sh       the restore command's logic, after the module's preamble
 tests/vm.nix     the NixOS VM test
-docs/            this, configuration, restoring and architecture
+docs/            this, configuration, restoring, compatibility and architecture
 ```
 
 ## Checks
@@ -42,3 +42,8 @@ mounts, restic would read the live file, and it fails.
 
 The restore command is built with `writeShellApplication`, so shellcheck
 runs on it, preamble included, as part of the test.
+
+Anything that could lose someone's data wants a test before it wants a
+feature. A change to an option, a unit or the restore command goes in
+`CHANGELOG.md`; see [Compatibility](compatibility.md) for what makes it
+breaking.

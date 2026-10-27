@@ -137,6 +137,9 @@ run again. [Development](docs/development.md) has the details.
   preservation, append-only repositories, reports and databases.
 - [**Restoring**](docs/restoring.md) - What the restore command does, step
   by step, and how to undo it.
+- [**Compatibility**](docs/compatibility.md) - What a release may change:
+  options, units, the restore command and its files. Changes are in
+  [CHANGELOG.md](CHANGELOG.md).
 - [**Architecture**](docs/architecture.md) - The units snapback adds, how a
   run uses the snapshot, and why it is built this way.
 - [**Development**](docs/development.md) - The checks, the VM test and how
