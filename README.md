@@ -9,6 +9,7 @@ which units to stop, and one command brings it all back. See
 
 <br/>
 
+[![Checks](https://codeberg.org/BW20/snapback/actions/workflows/ci.yml/badge.svg)](https://codeberg.org/BW20/snapback/actions?workflow=ci.yml)
 ![NixOS module](https://img.shields.io/badge/NixOS-module-5277c3?style=flat-square&logo=nixos&logoColor=white)
 ![restic and ZFS](https://img.shields.io/badge/built%20on-restic%20%2B%20ZFS-5277c3?style=flat-square)
 [![License: EUPL-1.2](https://img.shields.io/badge/license-EUPL--1.2-blue?style=flat-square)](LICENSE)

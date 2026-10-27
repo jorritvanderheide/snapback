@@ -17,6 +17,13 @@ nix flake check   # the VM test
 nix fmt           # nixfmt
 ```
 
+CI runs `nix flake check` on every push to `main` and every pull request
+(`.forgejo/workflows/ci.yml`), on the Forgejo runner on dapple (label
+`nix`), which has KVM for the VM test.
+
+Nix flakes only see files git tracks, so a new file needs `jj` or `git add`
+to have seen it before `nix flake check` will.
+
 The VM test runs one machine with a ZFS pool on a second disk, an
 append-only `rest-server`, and a service with an entry:
 
