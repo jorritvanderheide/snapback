@@ -237,8 +237,12 @@ your `report` commands to wherever you send them.
 ## 8 Questions or issues?
 
 If something doesn't work, or you have an idea, please
-[open an issue](https://codeberg.org/BW20/snapback/issues/new/choose). The source
-and the issues live on [Codeberg](https://codeberg.org/BW20/snapback).
+[open an issue](https://codeberg.org/BW20/snapback/issues/new/choose).
+Found a security problem? Please report it privately, as described in the
+[security policy](SECURITY.md).
+
+The source and the issues live on [Codeberg](https://codeberg.org/BW20/snapback).
+The source is mirrored to [GitHub](https://github.com/jorritvanderheide/snapback).
 
 <br/>
 

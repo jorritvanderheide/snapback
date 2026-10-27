@@ -6,3 +6,6 @@ contact_links:
     - name: Restoring
       url: https://codeberg.org/BW20/snapback/src/branch/main/docs/restoring.md
       about: What the restore command does, step by step, and how to undo a restore.
+    - name: Report a security problem
+      url: https://github.com/jorritvanderheide/snapback/security/advisories/new
+      about: Please report security problems privately, not in a public issue.

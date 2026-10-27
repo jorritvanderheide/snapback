@@ -5,6 +5,7 @@
 ```
 flake.nix        the module and the checks
 CHANGELOG.md     what changed in each release
+SECURITY.md      what counts as a security problem, and where to report it
 .forgejo/        CI, the release workflow and the issue templates
 module.nix       the options, the units and the restore command
 restore.sh       the restore command's logic, after the module's preamble
