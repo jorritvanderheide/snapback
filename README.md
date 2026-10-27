@@ -250,3 +250,8 @@ Liberapay:
 ## 10 License
 
 Copyright © 2026 Jorrit van der Heide. Licensed under the [EUPL-1.2](LICENSE).
+
+The logo is based on the [Nix snowflake](https://github.com/NixOS/nixos-artwork/tree/master/logo)
+by Simon Frankau and Tim Cuthbertson,
+[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/), changed so that one
+lambda melts into a drop.

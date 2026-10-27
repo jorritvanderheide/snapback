@@ -1,20 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-  <!-- A snowflake in NixOS's two blues, arm by arm, as the snapshot each
-       backup freezes. One arm melts into a drop, and the arrow freezes it
-       again: snap back. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200">
+  <!-- The Nix snowflake (by Simon Frankau and Tim Cuthbertson, CC-BY 4.0,
+       from NixOS/nixos-artwork) in its two flat blues, as the snapshot each
+       backup freezes. Its lower-left lambda has melted into a drop, and the
+       arrow freezes it again: snap back. -->
   <defs>
-    <path id="arm" d="M100 84V42M100 64L84 50M100 64L116 50" fill="none" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="lambda" d="m309.55-710.39 122.2 211.68-56.16.53-32.62-56.87-32.86 56.57-27.9-.01-14.29-24.69 46.81-80.49-33.23-57.83z"/>
   </defs>
-  <g transform="translate(-11 -7)">
-    <use href="#arm" stroke="#5277c3"/>
-    <use href="#arm" stroke="#7ebae4" transform="rotate(60 100 100)"/>
-    <use href="#arm" stroke="#5277c3" transform="rotate(120 100 100)"/>
-    <use href="#arm" stroke="#5277c3" transform="rotate(240 100 100)"/>
-    <use href="#arm" stroke="#7ebae4" transform="rotate(300 100 100)"/>
-    <path d="M100 116V124" stroke="#7ebae4" stroke-width="13" stroke-linecap="round"/>
-    <path d="M100 126V142" stroke="#7ebae4" stroke-width="5" stroke-linecap="round"/>
-    <path d="M100 138C100 138 87 152 87 161A13 13 0 0 0 113 161C113 152 100 138 100 138z" fill="#7ebae4"/>
-    <path d="M127.36 175.18A80 80 0 0 0 175.18 72.64" fill="none" stroke="#5277c3" stroke-width="12" stroke-linecap="round"/>
-    <path d="M166.98 50.08L195 68.62L157.4 82.3z" fill="#5277c3"/>
+  <g transform="translate(-4 -11.5)">
+    <g transform="translate(88 96) scale(0.26) translate(-407.3 715.8)">
+      <use xlink:href="#lambda" fill="#5277c3" transform="rotate(60 407.3 -715.8)"/>
+      <use xlink:href="#lambda" fill="#7ebae4" transform="rotate(120 407.3 -715.8)"/>
+      <use xlink:href="#lambda" fill="#5277c3" transform="rotate(180 407.3 -715.8)"/>
+      <use xlink:href="#lambda" fill="#7ebae4" transform="rotate(240 407.3 -715.8)"/>
+      <use xlink:href="#lambda" fill="#5277c3" transform="rotate(300 407.3 -715.8)"/>
+    </g>
+    <!-- As far from both neighbouring lambdas. -->
+    <path d="M62.9 108C62.9 108 47.9 132 47.9 148A15 15 0 0 0 77.9 148C77.9 132 62.9 108 62.9 108z" fill="#7ebae4"/>
+    <path d="M117.41 176.81A86 86 0 0 0 168.81 66.59" fill="none" stroke="#5277c3" stroke-width="12" stroke-linecap="round"/>
+    <path d="M161.29 45.91L185.82 63.6L153.86 75.22z" fill="#5277c3"/>
   </g>
 </svg>
