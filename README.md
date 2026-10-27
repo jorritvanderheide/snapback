@@ -9,8 +9,8 @@ which units to stop, and one command brings it all back. See
 
 <br/>
 
-![NixOS module](https://img.shields.io/badge/NixOS-module-0369a1?style=flat-square&logo=nixos&logoColor=white)
-![restic and ZFS](https://img.shields.io/badge/built%20on-restic%20%2B%20ZFS-0369a1?style=flat-square)
+![NixOS module](https://img.shields.io/badge/NixOS-module-5277c3?style=flat-square&logo=nixos&logoColor=white)
+![restic and ZFS](https://img.shields.io/badge/built%20on-restic%20%2B%20ZFS-5277c3?style=flat-square)
 [![License: EUPL-1.2](https://img.shields.io/badge/license-EUPL--1.2-blue?style=flat-square)](LICENSE)
 
 A backup of live files is a backup of files changing under it. A database

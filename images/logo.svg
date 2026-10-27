@@ -1,14 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-  <!-- The bands are cut out of the disk, so they show whatever is behind it, light or dark. -->
-  <mask id="bands">
-    <rect width="200" height="200" fill="#fff"/>
-    <g fill="none" stroke="#000" stroke-width="7">
-      <path d="M70 82A30 9 0 0 0 130 82"/>
-      <path d="M70 105A30 9 0 0 0 130 105"/>
-    </g>
-  </mask>
-  <!-- The arrow turns back to where it started: snap back. -->
-  <path d="M66 45.11A68 68 0 1 0 134 45.11" fill="none" stroke="#0369a1" stroke-width="20"/>
-  <path d="M111.48 32.11L149.96 25.46L124.96 68.76z" fill="#0369a1"/>
-  <path d="M70 78A30 9 0 0 1 130 78V128A30 9 0 0 1 70 128z" fill="#0369a1" mask="url(#bands)"/>
+  <!-- A snowflake in NixOS's two blues, arm by arm, as the snapshot each
+       backup freezes. One arm melts into a drop, and the arrow freezes it
+       again: snap back. -->
+  <defs>
+    <path id="arm" d="M100 84V42M100 64L84 50M100 64L116 50" fill="none" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  </defs>
+  <g transform="translate(-11 -7)">
+    <use href="#arm" stroke="#5277c3"/>
+    <use href="#arm" stroke="#7ebae4" transform="rotate(60 100 100)"/>
+    <use href="#arm" stroke="#5277c3" transform="rotate(120 100 100)"/>
+    <use href="#arm" stroke="#5277c3" transform="rotate(240 100 100)"/>
+    <use href="#arm" stroke="#7ebae4" transform="rotate(300 100 100)"/>
+    <path d="M100 116V124" stroke="#7ebae4" stroke-width="13" stroke-linecap="round"/>
+    <path d="M100 126V142" stroke="#7ebae4" stroke-width="5" stroke-linecap="round"/>
+    <path d="M100 138C100 138 87 152 87 161A13 13 0 0 0 113 161C113 152 100 138 100 138z" fill="#7ebae4"/>
+    <path d="M127.36 175.18A80 80 0 0 0 175.18 72.64" fill="none" stroke="#5277c3" stroke-width="12" stroke-linecap="round"/>
+    <path d="M166.98 50.08L195 68.62L157.4 82.3z" fill="#5277c3"/>
+  </g>
 </svg>
