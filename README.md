@@ -233,7 +233,7 @@ your `report` commands to wherever you send them.
 ## 8 Questions or issues?
 
 If something doesn't work, or you have an idea, please
-[open an issue](https://codeberg.org/BW20/snapback/issues/new). The source
+[open an issue](https://codeberg.org/BW20/snapback/issues/new/choose). The source
 and the issues live on [Codeberg](https://codeberg.org/BW20/snapback).
 
 <br/>

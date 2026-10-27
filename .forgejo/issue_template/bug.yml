@@ -1,0 +1,104 @@
+name: Bug report
+about: Something in snapback doesn't work the way the README or the docs say it should.
+labels: ['bug']
+body:
+    - type: markdown
+      attributes:
+          value: |
+              Thanks for taking the time to report this. Before you start, have a quick look at [Configuration](https://codeberg.org/BW20/snapback/src/branch/main/docs/configuration.md) and [Restoring](https://codeberg.org/BW20/snapback/src/branch/main/docs/restoring.md): the most common surprises, like a path that isn't in the snapshot or a lock an append-only repository can't remove, are explained there.
+
+              Please don't paste your repository's password, its credentials or a repository URL with credentials in it. Logs and configuration with those replaced by `...` help just as much.
+
+    - type: textarea
+      id: what
+      attributes:
+          label: What happened?
+          description: And what did you expect to happen instead?
+      validations:
+          required: true
+
+    - type: textarea
+      id: config
+      attributes:
+          label: Configuration
+          description: Your `services.snapback` settings, and the `services.restic.backups` entry it adds to.
+          render: nix
+      validations:
+          required: true
+
+    - type: textarea
+      id: steps
+      attributes:
+          label: Steps to reproduce
+          description: The smallest set of steps that shows the problem.
+          placeholder: |
+              1. sudo systemctl start restic-backups-offsite.service
+              2. sudo offsite-restore --target /tmp/restore-test vaultwarden
+              3. ...
+      validations:
+          required: true
+
+    - type: input
+      id: version
+      attributes:
+          label: snapback commit
+          description: Run `nix flake metadata --json | jq -r .locks.nodes.snapback.locked.rev` in your flake.
+      validations:
+          required: true
+
+    - type: input
+      id: nixos
+      attributes:
+          label: NixOS version
+          description: Run `nixos-version`.
+          placeholder: 26.11.20261027.55bfb4d
+      validations:
+          required: true
+
+    - type: dropdown
+      id: repository
+      attributes:
+          label: Where does the repository live?
+          options:
+              - S3-compatible storage (Storj, Backblaze B2, AWS, ...)
+              - rest-server
+              - SFTP
+              - A local or mounted folder
+              - Something else
+      validations:
+          required: true
+
+    - type: dropdown
+      id: append-only
+      attributes:
+          label: Is `appendOnly` on?
+          options:
+              - "Yes"
+              - "No"
+      validations:
+          required: true
+
+    - type: dropdown
+      id: layout
+      attributes:
+          label: How are the backed-up paths laid out?
+          options:
+              - Directly on the dataset
+              - Bind-mounted, with impermanence
+              - Bind-mounted, with preservation
+              - Something else
+      validations:
+          required: true
+
+    - type: textarea
+      id: logs
+      attributes:
+          label: Logs
+          description: The backup's journal (`journalctl -u restic-backups-<name> -u <name>-backup-snapshot -b`), or for a restore, `/var/log/<name>-restore.log`.
+          render: text
+
+    - type: textarea
+      id: extra
+      attributes:
+          label: Anything else?
+          description: The ZFS layout (`zfs list`), or anything else that seems related.

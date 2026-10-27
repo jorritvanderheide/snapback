@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+    - name: Read the documentation
+      url: https://codeberg.org/BW20/snapback/src/branch/main/docs/configuration.md
+      about: Entries, impermanence and preservation, append-only repositories, reports and databases.
+    - name: Restoring
+      url: https://codeberg.org/BW20/snapback/src/branch/main/docs/restoring.md
+      about: What the restore command does, step by step, and how to undo a restore.
