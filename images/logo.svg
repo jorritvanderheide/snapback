@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- The bands are cut out of the disk, so they show whatever is behind it, light or dark. -->
+  <mask id="bands">
+    <rect width="200" height="200" fill="#fff"/>
+    <g fill="none" stroke="#000" stroke-width="7">
+      <path d="M70 82A30 9 0 0 0 130 82"/>
+      <path d="M70 105A30 9 0 0 0 130 105"/>
+    </g>
+  </mask>
+  <!-- The arrow turns back to where it started: snap back. -->
+  <path d="M66 45.11A68 68 0 1 0 134 45.11" fill="none" stroke="#0369a1" stroke-width="20"/>
+  <path d="M111.48 32.11L149.96 25.46L124.96 68.76z" fill="#0369a1"/>
+  <path d="M70 78A30 9 0 0 1 130 78V128A30 9 0 0 1 70 128z" fill="#0369a1" mask="url(#bands)"/>
+</svg>
