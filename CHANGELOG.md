@@ -3,7 +3,7 @@
 What changed in each release of snapback, newest first. What counts as
 breaking is in [Compatibility](docs/compatibility.md).
 
-## Unreleased
+## 0.1.0
 
 - The first release. `services.snapback` snapshots a ZFS dataset before
   each run of a `services.restic.backups` entry, and mounts the snapshot
