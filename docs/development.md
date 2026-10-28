@@ -70,5 +70,6 @@ breaking.
    marked as pre-releases.
 
 There is nothing to build or upload: a flake pins the tag itself
-(`?ref=X.Y.Z`). Before releasing anything that renames or removes an
-option, a unit or an argument, see [Compatibility](compatibility.md).
+(`?ref=refs/tags/X.Y.Z`). Before releasing anything that renames or
+removes an option, a unit or an argument, see
+[Compatibility](compatibility.md).

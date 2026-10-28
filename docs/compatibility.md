@@ -25,7 +25,7 @@ change. Backups always restore.
 Pin a release in your flake to upgrade when you choose:
 
 ```nix
-inputs.snapback.url = "git+https://codeberg.org/BW20/snapback?ref=0.1.0";
+inputs.snapback.url = "git+https://codeberg.org/BW20/snapback?ref=refs/tags/0.1.0";
 ```
 
 ## Backups
